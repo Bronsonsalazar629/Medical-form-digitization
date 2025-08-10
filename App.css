@@ -1,0 +1,1232 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+  line-height: 1.4;
+  color: #000;
+  background-color: #f5f5f5;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HIPAA Compliance Notice */
+.hipaa-notice {
+  background-color: #e8f5e8;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hipaa-notice p {
+  color: #155724;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Success Message */
+.success-message {
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+.success-message p {
+  color: #155724;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disabled button styles */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Header styles */
+.header {
+  background: #4a6fa5;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-new {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-new:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-export {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-export:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-folder {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.btn-folder:hover {
+  background-color: #8e44ad;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* PDF Container */
+.pdf-container {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 794px;
+  max-width: 794px;
+  min-width: 794px;
+  margin: 0 auto;
+  padding: 0;
+  /* Remove any height restrictions */
+}
+
+.pdf-page {
+  padding: 0;
+  min-height: unset;
+  box-shadow: none;
+  margin: 0;
+  /* Remove any height restrictions */
+}
+
+.page-2 {
+  page-break-before: always;
+}
+
+/* PDF Header */
+.pdf-header {
+  text-align: center;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 6px;
+}
+
+.pdf-header h2 {
+  font-size: 1.4rem;
+  color: #000;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.patient-info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.label {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* PDF Inputs */
+.pdf-input {
+  padding: 8px 12px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+  min-width: 200px;
+}
+
+.pdf-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.pdf-text-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+}
+
+.pdf-text-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Auto-expanding textarea for multi-line content */
+.compact-textarea {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  min-height: 20px;
+  max-height: 200px;
+  resize: vertical;
+  padding: 4px 6px;
+  margin: 2px 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  height: auto;
+}
+
+/* Balanced compact form with proper spacing */
+.pdf-container {
+  max-width: 750px;
+  padding: 8px;
+}
+
+.pdf-page {
+  padding: 6px;
+  min-height: unset;
+  box-shadow: none;
+}
+
+.pdf-textarea, .pdf-input, .exam-input, .signature-input {
+  font-size: 0.9rem;
+  padding: 4px 6px;
+  margin: 2px 0;
+}
+
+.exam-input {
+  text-align: center;
+  vertical-align: middle;
+  height: 2.2em;
+  line-height: 2.2em;
+}
+
+.chief-complaint-section, .history-section, .physical-exam-section, .problem-list-section, .signature-section {
+  margin-bottom: 6px;
+  padding: 4px;
+}
+
+.header h1 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* Chief Complaint Section */
+.chief-complaint-section {
+  margin-bottom: 2px;
+  border: 1px solid #000;
+  padding: 2px;
+  page-break-inside: avoid;
+  page-break-before: auto;
+}
+
+.chief-complaint-section h3 {
+  color: #000;
+  font-size: 0.8rem;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
+  line-height: 0.8;
+  page-break-after: avoid;
+}
+
+/* History Section */
+.history-section {
+  margin-bottom: 2px;
+  border: 1px solid #000;
+  padding: 2px;
+  page-break-inside: avoid;
+}
+
+.history-section h3 {
+  color: #000;
+  font-size: 0.8rem;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
+  line-height: 0.8;
+}
+
+.allergies-meds {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.allergies, .meds {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Physical Exam Section */
+.physical-exam-section {
+  margin-bottom: 8px;
+  border: 1px solid #000;
+  padding: 6px;
+  page-break-inside: avoid;
+  page-break-before: auto;
+}
+
+.physical-exam-section h3 {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  line-height: 1.0;
+  page-break-after: avoid;
+}
+
+.exam-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.exam-column {
+  display: block;
+  width: 100%;
+}
+
+.exam-item {
+  margin-bottom: 6px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 8px;
+  align-items: start;
+  width: 100%;
+}
+
+.exam-label {
+  font-weight: bold;
+  color: #000;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding-top: 6px;
+  text-align: right;
+}
+
+.exam-input {
+  width: 200px !important;
+  max-width: 200px !important;
+  min-height: 24px !important;
+  max-height: 80px !important;
+  margin: 0 !important;
+  padding: 4px 6px !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+  line-height: 1.3 !important;
+  overflow: auto !important;
+  font-family: inherit !important;
+  border: 1px solid #333 !important;
+  background-color: white !important;
+  display: block !important;
+  outline: none !important;
+}
+
+.exam-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Universal textarea wrapping rules */
+textarea {
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+  hyphens: auto !important;
+  text-wrap: wrap !important;
+  overflow-x: hidden !important;
+  resize: vertical !important;
+  font-family: inherit !important;
+}
+
+/* Problem List Section */
+.problem-list-section {
+  margin-bottom: 8px;
+  border: 1px solid #000;
+  padding: 6px;
+  page-break-inside: avoid;
+  page-break-before: auto;
+}
+
+.problem-list-section h3 {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  line-height: 1.0;
+  page-break-after: avoid;
+}
+
+.problem-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.problem-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.problem-number {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+  min-width: 20px;
+}
+
+.problem-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: transparent;
+}
+
+.problem-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  margin-bottom: 8px;
+  border: 1px solid #000;
+  padding: 6px;
+  page-break-inside: avoid;
+  page-break-before: auto;
+}
+
+.recommendations-section h3 {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  line-height: 1.0;
+  page-break-after: avoid;
+}
+
+/* Signature Section */
+.signature-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px solid #000;
+}
+
+.signature-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.signature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.signature-item.full-width {
+  flex: 1 1 100%;
+  min-width: 100%;
+}
+
+.signature-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+}
+
+.signature-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* PDF Textarea */
+.pdf-textarea {
+  width: 100%;
+  min-height: 30px;
+  padding: 3px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 0.8rem;
+  font-family: inherit;
+  resize: vertical;
+  background: transparent;
+  line-height: 1.0;
+  margin-top: 2px;
+}
+
+/* Ensure Social History and Surgical History sections have proper spacing */
+.history-section:nth-of-type(3),
+.history-section:nth-of-type(4) {
+  margin-bottom: 6px;
+}
+
+.history-section:nth-of-type(3) h3,
+.history-section:nth-of-type(4) h3 {
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+}
+
+.pdf-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.pdf-textarea::placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+/* Print styles for PDF optimization */
+@media print {
+  .header {
+    display: none;
+  }
+  
+  .hipaa-notice {
+    display: none;
+  }
+  
+  .success-message {
+    display: none;
+  }
+  
+  .pdf-container {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+  }
+  
+  .pdf-page {
+    padding: 0;
+    min-height: auto;
+    page-break-after: always;
+  }
+  
+  .page-2 {
+    page-break-before: always;
+  }
+  
+  .btn {
+    display: none;
+  }
+  
+  body {
+    background-color: white;
+  }
+  
+  .App {
+    padding: 0;
+  }
+  
+  .pdf-input,
+  .pdf-text-input,
+  .pdf-textarea,
+  .exam-input,
+  .problem-input,
+  .signature-input {
+    border-color: #000;
+    background: transparent;
+  }
+  
+  /* Comprehensive page break controls for all sections */
+  .chief-complaint-section,
+  .history-section,
+  .physical-exam-section,
+  .problem-list-section,
+  .recommendations-section {
+    page-break-inside: avoid !important;
+    page-break-before: auto;
+    page-break-after: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Force all section headers to stay with their content */
+  .chief-complaint-section h3,
+  .history-section h3,
+  .physical-exam-section h3,
+  .problem-list-section h3,
+  .recommendations-section h3 {
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    line-height: 1.3;
+  }
+  
+  /* Ensure exam columns stay together */
+  .exam-columns {
+    page-break-inside: avoid !important;
+  }
+  
+  /* Prevent any text cutoff in all sections */
+  .pdf-textarea,
+  .pdf-input,
+  .pdf-text-input,
+  .exam-input,
+  .problem-input {
+    page-break-inside: avoid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Optimize spacing for print */
+  .pdf-header {
+    margin-bottom: 15px;
+  }
+  
+  .pdf-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Universal section protection */
+  .chief-complaint-section,
+  .history-section,
+  .physical-exam-section,
+  .problem-list-section,
+  .recommendations-section {
+    margin-bottom: 8px;
+    padding: 6px;
+    page-break-inside: avoid !important;
+  }
+  
+  /* Universal header protection */
+  .chief-complaint-section h3,
+  .history-section h3,
+  .physical-exam-section h3,
+  .problem-list-section h3,
+  .recommendations-section h3 {
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    line-height: 1.0;
+    page-break-after: avoid !important;
+  }
+  
+  /* Optimize text areas for print */
+  .pdf-textarea {
+    min-height: 25px;
+    font-size: 0.75rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure all form elements are protected */
+  .pdf-input,
+  .pdf-text-input,
+  .exam-input,
+  .problem-input,
+  .signature-input {
+    page-break-inside: avoid;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  
+  /* Force proper page breaks */
+  .pdf-page {
+    page-break-after: always;
+    overflow: visible;
+  }
+  
+  .page-2 {
+    page-break-before: always;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .pdf-page {
+    padding: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .exam-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .allergies-meds {
+    flex-direction: column;
+  }
+  
+  .signature-row {
+    flex-direction: column;
+  }
+  
+  .signature-item {
+    min-width: auto;
+  }
+}
+
+/* Accessibility improvements */
+.pdf-input:focus,
+.pdf-text-input:focus,
+.pdf-textarea:focus,
+.exam-input:focus,
+.problem-input:focus,
+.signature-input:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .chief-complaint-section,
+  .history-section,
+  .physical-exam-section,
+  .problem-list-section,
+  .recommendations-section {
+    border-color: #000;
+  }
+  
+  .pdf-input,
+  .pdf-text-input,
+  .pdf-textarea,
+  .exam-input,
+  .problem-input,
+  .signature-input {
+    border-color: #000;
+  }
+}
+
+.pdf-container {
+  max-width: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-page {
+  padding: 0;
+  min-height: unset;
+  box-shadow: none;
+  margin: 0;
+}
+
+.pdf-textarea, .pdf-input, .exam-input, .signature-input {
+  font-size: 0.6rem;
+
+  margin: 0;
+  min-height: 12px;
+}
+
+.chief-complaint-section, .history-section, .physical-exam-section, .assessment-plan-section, .signature-section {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.history-section, .physical-exam-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.history-section > div,
+.physical-exam-section > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.history-section *,
+.physical-exam-section * {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  background: none !important;
+}
+
+.header h1 {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+}
+
+.label, .exam-label {
+  font-size: 0.6rem;
+  margin-right: 1px;
+}
+
+.pdf-header h2 {
+  font-size: 0.65rem;
+  margin-bottom: 0;
+}
+
+.info-row {
+  gap: 2px;
+  margin: 0;
+}
+
+.allergies-meds {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin: 0;
+}
+
+.allergies, .meds {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.exam-columns {
+  display: flex;
+  gap: 2px;
+  margin: 0;
+}
+
+.exam-column {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.exam-item {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.assessment-plan-section, .signature-section {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.pdf-header, .pdf-header h2, h2, h3 {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+@media print {
+  .pdf-container, .pdf-page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .pdf-header, .pdf-header h2, h2, h3 {
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+}
+
+@media print {
+  .pdf-container {
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  .pdf-page {
+    padding: 0;
+    margin: 0;
+    min-height: unset;
+    box-shadow: none;
+    border: none;
+    background: none;
+  }
+  .compact-textarea, .pdf-textarea, .pdf-input, .exam-input, .signature-input, .label, .exam-label, .pdf-header h2, .header h1 {
+    font-size: 0.6rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 12px !important;
+  }
+  .header, .hipaa-notice, .success-message, .btn, .button-group {
+    display: none !important;
+  }
+  .chief-complaint-section, .history-section, .physical-exam-section, .assessment-plan-section, .signature-section {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.pdf-container, .pdf-page, .pdf-header, .pdf-header h2, h2, h3, .compact-textarea, .editable-div, .signature-input, .exam-input, .pdf-input {
+  background: #fff !important;
+  color: #000 !important;
+  box-shadow: none !important;
+}
+
+body, html {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+@media print {
+  * {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  .pdf-container, .pdf-page, .pdf-header, .pdf-header h2, h2, h3, .compact-textarea, .editable-div, .signature-input, .exam-input, .pdf-input {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  body, html {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+@media print {
+  body, html, .pdf-container, .pdf-page, .compact-textarea, .editable-div, .exam-input, .pdf-input, .signature-input, h2, h3, .pdf-header h2, .exam-label, .label {
+    font-size: 3rem !important;
+  }
+  .exam-input {
+    text-align: center !important;
+    vertical-align: middle !important;
+    height: 2.2em !important;
+    line-height: 2.2em !important;
+  }
+}
+
+.pdf-exporting * {
+  font-size: 0.85rem !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+  overflow: visible !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-height: none !important;
+}
+
+.pdf-exporting {
+  width: 100% !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+}
+
+.pdf-exporting .exam-item {
+  gap: 0.4em !important;
+  margin-bottom: 0.4em !important;
+  min-height: 1.5em !important;
+}
+
+.pdf-exporting .editable-div,
+.pdf-exporting .pdf-textarea,
+.pdf-exporting .compact-textarea,
+.pdf-exporting .exam-input,
+.pdf-exporting input[type="text"],
+.pdf-exporting textarea {
+  border: 1px solid #333 !important;
+  outline: none !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-height: none !important;
+  width: 100% !important;
+  font-size: 0.85rem !important;
+  padding: 4px 6px !important;
+  margin: 2px 0 !important;
+  background: #fff !important;
+  border-radius: 0px !important;
+  line-height: 1.4 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+  hyphens: auto !important;
+  text-align: left !important;
+  text-wrap: wrap !important;
+}
+
+/* Ensure proper spacing around all form elements for border rendering */
+.pdf-exporting .chief-complaint-section,
+.pdf-exporting .history-section,
+.pdf-exporting .physical-exam-section,
+.pdf-exporting .assessment-plan-section {
+  padding: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+
+/* Prevent page-break interference with border rendering */
+.pdf-exporting * {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* Force aggressive text wrapping during PDF export */
+.pdf-exporting .editable-div,
+.pdf-exporting .pdf-textarea,
+.pdf-exporting .compact-textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
+  hyphens: auto !important;
+  line-height: 1.0 !important;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 50px !important;
+  margin: 1px 0 !important;
+  padding: 4px 5px !important;
+  font-size: 0.8rem !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+
+
+input, .editable-div, .pdf-input, .exam-input, .signature-input, .pdf-textarea, .compact-textarea {
+  border: 1px solid #333 !important;
+  outline: none !important;
+  box-sizing: border-box;
+  margin: 2px 0;
+  padding: 4px 6px;
+}
+
+.pdf-container, .pdf-page {
+  border-collapse: separate !important;
+  border-spacing: 2px !important;
+}
+
+.history-section,
+.physical-exam-section {
+  margin-bottom: 6px !important;
+}
+
+.editable-div, .pdf-textarea, .compact-textarea {
+  min-height: 70px !important;
+  max-height: 200px !important;
+  font-size: 0.8rem !important;
+  width: 100%;
+  margin: 1px 0 !important;
+  padding: 4px 6px !important;
+  border: 1px solid #333 !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+  overflow-y: auto !important;
+  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+  hyphens: auto !important;
+  text-align: left !important;
+  text-wrap: wrap !important;
+  line-height: 1.0 !important;
+  resize: vertical !important;
+}
+
+.exam-input {
+  min-height: 24px !important;
+  font-size: 0.85rem !important;
+  margin: 3px 0 !important;
+  padding: 3px 5px !important;
+  border: 1px solid #333 !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+}
+
+.exam-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8em !important;
+  margin: 2px 0 6px 0 !important;
+  min-height: 2.6em !important;
+}
+
+.exam-label {
+  margin-right: 0.4em !important;
+  min-width: 0 !important;
+  width: auto !important;
+  display: inline !important;
+  padding: 0 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Keep all borders for complete rectangles */
+.history-section .editable-div:last-child {
+  border-bottom: 1px solid #333 !important;
+}
+
+.physical-exam-section .exam-input:first-of-type {
+  border-top: 1px solid #333 !important;
+}
+
+.exam-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5em !important;
+  margin: 0 0 0.5em 0 !important;
+  padding: 0 !important;
+  min-height: 2.2em !important;
+}
+
+.exam-label {
+  margin-right: 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+  display: inline !important;
+  padding: 0 !important;
+}
+
+.exam-input {
+  flex: 1 1 0 !important;
+  min-width: 100px !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0.3em 0.5em !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
